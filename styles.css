@@ -1,0 +1,140 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: black;  /* Black Background */
+    color: rgb(255, 175, 0); /* Gold Text */
+}
+
+/* Header and Logo */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+#logo {
+    transition: all 1s ease-in-out;
+    padding-bottom: 40px;
+}
+
+#logo img {
+    max-width: 600px;
+    height: auto;
+    transition: all 1s ease-in-out;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: rgb(255, 175, 0);
+    margin: 10px 0;
+    transition: all 1s ease-in-out;
+    cursor: pointer; /* Ensures the link is clickable */
+}
+
+/* About Section */
+#about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 80%;
+    max-width: 600px;
+}
+
+#about-header {
+    text-transform: lowercase;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    transition: all 1s ease-in-out;
+}
+
+#about-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Animation Classes */
+.logo-move {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-move img {
+    max-width: 300px;
+}
+
+/* Nav moves to the top right */
+.nav-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Stack Projects and Contact vertically */
+#nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Smooth fade out */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Smooth fade in */
+.fade-in {
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Properly center "About" text */
+.about-header-move {
+    position: relative;
+    top: 0;
+}
+
+/* Footer - Fixed at Bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}

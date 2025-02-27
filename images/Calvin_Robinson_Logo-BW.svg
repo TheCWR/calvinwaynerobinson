@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.18 133.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Impact, Impact;
+        font-size: 17.57px;
+        stroke-width: .5px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-4 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Logo_Initials" data-name="Logo Initials">
+    <path class="cls-2" d="M227.5,73.08c6.81,0,13.08-.06,18.85-.2l.15.2,26.44,35.61h36.11s-28.84-38.56-28.84-38.56c23.04-4.11,29.29-13.29,29.29-32.05,0-5.04-.36-10.18-1.81-15.03-5.92-19.78-30.11-21.19-47.34-21.79l-42.24-.45h-4.46s-13.15,43.02-16.45,53.84c-3.91-10.81-19.44-53.84-19.44-53.84l-36.02-.3s-12.13,40.15-15.69,51.93c-3.66-10.86-17.29-51.35-17.29-51.35h-36.11C26.31,1.04.5,21.08.5,57.08c0,40.42,16.14,52.03,72.19,52,0-.11,0-.22,0-.22,0,0,0-32.14,0-35.78q-36.19,0-36.19-16c.06-13.1.78-17.83,15.17-18.62,11.28-.62,22.27-.6,33.52-.39,2.69,7.98,23.81,70.73,23.81,70.73h36.11l16.19-53.56c4.05,11.22,19.34,53.56,19.34,53.56h36.11s8.43-27.57,11.05-36.15"/>
+    <path class="cls-2" d="M237.96,39.37c1.44-4.7,3.04-9.95,4.06-13.29,34.07-.02,41.48,2.1,41.48,12,0,7.78-10.77,10.01-48.2,10l2.66-8.72Z"/>
+  </g>
+  <g id="Name">
+    <text class="cls-1" transform="translate(.93 127.19) scale(1.79 1)"><tspan x="0" y="0">CA</tspan><tspan class="cls-5" x="18.65" y="0">L</tspan><tspan class="cls-3" x="24.59" y="0">VIN </tspan><tspan class="cls-6" x="51.45" y="0">W</tspan><tspan class="cls-4" x="65.59" y="0">A</tspan><tspan x="73.45" y="0">YNE ROBINSON</tspan></text>
+  </g>
+</svg>
