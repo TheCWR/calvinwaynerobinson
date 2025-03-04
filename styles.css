@@ -1,11 +1,22 @@
 /* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "carta-marina", sans-serif;
+    font-weight: 400; /* Or 700 */
+    font-style: normal;
+
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: black;  /* Black Background */
-    color: rgb(255, 175, 0); /* Gold Text */
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+/* Greeting (Top Left) */
+#greeting {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.2rem;
 }
 
 /* Header and Logo */
@@ -29,6 +40,43 @@ header {
     transition: all 1s ease-in-out;
 }
 
+/* Move logo to top center and shrink */
+.logo-move {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5); /* Shrinks */
+    transition: all 1s ease-in-out;
+}
+
+/* Nav moves to the top right */
+.nav-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: all 1s ease-in-out;
+}
+
+/* Fade Out */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade In */
+.fade-in {
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Move About header */
+.about-header-move {
+    position: relative;
+    top: 0;
+}
+
 /* Navigation */
 nav {
     display: flex;
@@ -40,69 +88,83 @@ nav {
 nav a {
     text-decoration: none;
     font-size: 3rem;
-    color: rgb(255, 175, 0);
+    color: rgb(255, 255, 255);
     margin: 10px 0;
     transition: all 1s ease-in-out;
-    cursor: pointer; /* Ensures the link is clickable */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+    transform: scale(1.1);
 }
 
 /* About Section */
 #about {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    display: none; /* Initially hidden */
     transition: opacity 1s ease-in-out;
     width: 80%;
     max-width: 600px;
+    z-index: -1;
 }
 
+/* Make "About" section properly visible */
+.about-visible {
+    opacity: 1;
+    z-index: 1; /* Bring it forward when it appears */
+}
+
+/* About Header */
 #about-header {
     text-transform: lowercase;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     transition: all 1s ease-in-out;
 }
 
+/* About Paragraph */
 #about-text {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 0.9rem;
+.fade-in {
+    opacity: 1 !important;
 }
 
-/* Animation Classes */
+/* Logo Shrinking and Moving */
 .logo-move {
     position: absolute;
     top: 20px;
     left: 50%;
+    transform: translateX(-50%) scale(0.5); /* Shrinks to half size */
+}
+
+/* Moving "About" Link Slightly Up (NOT to the top-right) */
+.about-move {
+    position: absolute;
+    top: 30%;
+    left: 50%;
     transform: translateX(-50%);
+    font-size: 3rem; /* Slightly larger for emphasis */
 }
 
-.logo-move img {
-    max-width: 300px;
-}
-
-/* Nav moves to the top right */
+/* Nav moves to the top right (Keeps Projects & Contact stacked vertically) */
 .nav-top-right {
     position: absolute;
     top: 20px;
     right: 20px;
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking */
     align-items: flex-end;
 }
 
-/* Stack Projects and Contact vertically */
+/* Stack Projects and Contact in vertical layout */
 #nav-links {
     display: flex;
     flex-direction: column;
@@ -113,18 +175,6 @@ footer {
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
-
-/* Smooth fade in */
-.fade-in {
-    opacity: 1 !important;
-    transition: opacity 1s ease-in-out;
-}
-
-/* Properly center "About" text */
-.about-header-move {
-    position: relative;
-    top: 0;
 }
 
 /* Footer - Fixed at Bottom */

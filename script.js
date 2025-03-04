@@ -1,53 +1,79 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded, event listener attached.");
+    console.log("Script loaded successfully.");
 
-    const aboutLink = document.getElementById('about-link');
-    const logo = document.getElementById('logo');
-    const aboutHeader = document.getElementById('about-header');
-    const aboutSection = document.getElementById('about');
-    const aboutText = document.getElementById('about-text');
-    const navLinks = document.querySelectorAll('.fade-links');
-    const mainNav = document.getElementById('main-nav');
+    // Time-based greeting
+    const hours = new Date().getHours();
+    let greeting;
 
-    aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        console.log("About link clicked! Animations should trigger now.");
+    if (hours < 12) {
+        greeting = "Good morning!";
+    } else if (hours < 18) {
+        greeting = "Good afternoon!";
+    } else {
+        greeting = "Good evening!";
+    }
 
-        // Ensure About is clickable
-        aboutLink.style.pointerEvents = "auto";
+    // Add greeting to the page
+    const greetingElement = document.createElement("p");
+    greetingElement.id = "greeting";
+    greetingElement.textContent = greeting;
+    document.body.appendChild(greetingElement);
 
-        // Move and shrink logo gradually
-        logo.classList.add('logo-move');
-
-        // Move "About" header to correct position
-        aboutHeader.classList.add('about-header-move');
-
-        // Fade out "Projects" and "Contact" before moving them
-        navLinks.forEach(link => {
-            link.classList.add('fade-out');
-        });
-
-        // Move navigation to the top right
-        setTimeout(() => {
-            mainNav.classList.add('nav-top-right');
-        }, 500);
-
-        // Fade in "Projects" and "Contact" as a vertical stack
-        setTimeout(() => {
-            navLinks.forEach(link => {
-                link.classList.remove('fade-out');
-            });
-        }, 1000);
-
-        // Show About section smoothly
-        setTimeout(() => {
-            aboutSection.classList.add('fade-in');
-            aboutText.classList.add('fade-in');
-        }, 1000);
-    });
+    // Set the current year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded successfully.");
+
+    // Ensure lightbox only runs if images exist
+    const projectImages = document.querySelectorAll("#project-images img");
+    if (projectImages.length > 0) {
+        console.log("Project images found, initializing lightbox...");
+
+        // Create lightbox element
+        const lightbox = document.createElement("div");
+        lightbox.id = "lightbox";
+        document.body.appendChild(lightbox);
+
+        // Create image container inside lightbox
+        const imgContainer = document.createElement("div");
+        imgContainer.className = "image-container"; // Uses CSS for relative positioning
+        lightbox.appendChild(imgContainer);
+
+        // Create image element inside container
+        const img = document.createElement("img");
+        imgContainer.appendChild(img);
+
+        // Create close button inside the same container
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "✖";
+        closeButton.className = "close";
+        imgContainer.appendChild(closeButton); // Append inside image container
+
+        // Handle image clicks
+        projectImages.forEach(image => {
+            image.addEventListener("click", () => {
+                img.src = image.src;
+                lightbox.style.display = "flex";
+            });
+        });
+
+        // Close lightbox when clicking the close button
+        closeButton.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) { // Ensures it only closes when clicking outside the image
+                lightbox.style.display = "none";
+            }
+        });
+    } else {
+        console.log("No project images found. Lightbox script skipped.");
+    }
+
     // Set the current year in the footer
     document.getElementById("year").textContent = new Date().getFullYear();
 });
